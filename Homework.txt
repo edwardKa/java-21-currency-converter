@@ -1,0 +1,33 @@
+This project is a continuation of CURRENCY-CONVERTER classwork. Please, implement classwork before starting this 
+section.
+
+API usage from fixer.io is available from any browser directly. 
+
+1. Create a property file.
+2. Configure the application to read the property file.
+3. Move the resource URL (fixer.io) to application properties and use the property file each time you build the request.
+4. Create a console menu UI with the ability to convert any currency (available on the API) to any, like how much 
+USDs and EURos are there in 1 ILShekel and in any other "direction". 
+The currency parameters should be read from the console.
+5. Upgrate the console menu: add ability to convert a certain amount of money to another currency, like
+15 shekels in dollars or 227 GBPouns in shekels.
+6. Upgrade the error handling: for example, behaviour of what happens when the user inputs the currency, 
+that does not exist ("UDS" instead of USD, or <> than 3 letters). 
+There is one of two options to choose (up to you): 
+
+FIRST: "try..catch" the server error response and display a user friendly error message from server.
+It means, that you'll have to find the way to read RestTemplate's error response in order to display 
+the message to user. 
+
+SECOND: Find the way to "cache" the existing currencies within the application on the first request. Before each request
+it is necessary to check: whether the currency, requsted by user, exists in fixer's system or not. 
+In order to cache the data - the application request will download the currency list before the console is available for any user input.
+
+
+IT IS STRICTLY PROHIBITED to display the stacktrace of the error response in the console: messages in the console
+mush be "user friendly". 
+In addition, you will have to create an error log file in the certain error folder. 
+Error file location must be also configured through application.properties.
+Each time any stacktrace occurs - it should be recodred to the error log file.
+If the log file contains prefix - it must be set in application.properties as well.
+Otherwise - configure the error log filename in application.properties
